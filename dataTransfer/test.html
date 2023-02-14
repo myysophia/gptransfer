@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h1 align="center"> GP 慢查询</h1>
+</head>
+<body>
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+    table.imagetable {
+        font-family: verdana, arial, sans-serif;
+        font-size: 11px;
+        color: #333333;
+        border-width: 1px;
+        border-color: #999999;
+        border-collapse: collapse;
+    }
+
+    table.imagetable th {
+        background: #b5cfd2 url('cell-blue.jpg');
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #999999;
+    }
+
+    table.imagetable td {
+        background: #dcddc0 url('cell-grey.jpg');
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #999999;
+    }
+</style>
+
+<!-- Table goes in the document BODY -->
+<table class="imagetable">
+    <tr>
+        <th>rank</th>
+        <th>content</th>
+    </tr>
+    <tr valign="top">
+        <td align="right">1</td>
+        <td align="left">查询提交时间 :2020-10-15 15:42:35.24;当前gp有慢查询:procpid :6829;sess_id :7051266;sql为 :select glass_id,
+            min(substring(glass_id,2,2)) as year, min(substring(glass_id,4,1)) as month from wpp_fdefect_panel_f where
+            db_timestamp &gt;= '2020-10-15 15:10:00.0' and db_timestamp &lt; '2020-10-15 15:30:00.0' and ope_id =
+            'CB353' and real_flg = 'Y' and substring(glass_id,1,1) in ('A','C') and glass_id not like '%*%' group by
+            glass_id order by year, month
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>
