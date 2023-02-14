@@ -86,7 +86,7 @@ stetp2 找到有差异之后将报警信息写入110 的system_alarm<SYS=GPTRANS
 报警频率为15分钟检查一次，检查当前时间距离过去24H 是否有异常.
 报警sql为:
 select
-case when t.qty > '0' then 'ABNORMAL_Transfer 存在数量差异,请联系王旭处理!!'
+case when t.qty > '0' then 'ABNORMAL_Transfer 存在数量差异,请联系xx处理!!'
 else 'NORMAL' end
  from ( select count( 1 ) qty
 from system_alarm
